@@ -1,7 +1,7 @@
 import { Box, Center, Flex, Text } from "@chakra-ui/react"
 import { MdOutlineShoppingCart } from "react-icons/md";
 
-const CartWidget = () => {
+export const CartWidget = () => {
     return(
         <Flex alignItems={"Center"} height={"100%"} justifyContent={"space-between"} width={"50px"}>
             <MdOutlineShoppingCart size={40}/>
@@ -9,5 +9,3 @@ const CartWidget = () => {
         </Flex>
     )
 }
-
-export default CartWidget

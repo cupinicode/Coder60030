@@ -1,6 +1,6 @@
 import {Box, Text} from "@chakra-ui/react"
 
-const ItemListContainer = ({greeting}) => {
+export const ItemListContainer = ({greeting}) => {
     return (
         <Box>  
             <Text display={"flex"} justifyContent={"center"} color={"red"}>
@@ -9,5 +9,3 @@ const ItemListContainer = ({greeting}) => {
         </Box>
     )
 }
-
-export default ItemListContainer
