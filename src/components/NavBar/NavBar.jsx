@@ -28,7 +28,7 @@ export const NavBar = () => {
       <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <Box>
-            <Link to="/">DanStore</Link>
+            <Link to="/">DataSolutions</Link>
           </Box>
           <Menu>
             <MenuButton as={Link} cursor="pointer" style={{ marginLeft: 30 }}>
