@@ -2,7 +2,7 @@ import axios from "axios";
 
 //Desde aquí hago todas las llamadas a la API
 export async function getAllProducts() {
-    return await axios.get('https://dummyjson.com/products')
+    return await axios.get('https://dummyjson.com/product')
 }
 
 export async function getProductById(id) {
@@ -10,9 +10,9 @@ export async function getProductById(id) {
 }
 
 export async function getProductsByCategory(id) {
-  return await axios.get(`https://dummyjson.com/products/category/${id}`);
+  return await axios.get(`https://dummyjson.com/product/category/${id}`);
 }
 
 export async function getCategories() {
-  return await axios.get("https://dummyjson.com/products/categories");
+  return await axios.get("https://dummyjson.com/product/categories");
 }

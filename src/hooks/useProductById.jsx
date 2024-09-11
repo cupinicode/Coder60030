@@ -1,14 +1,15 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { getProductById } from "../services/products.service"
 
 export const useProductById = (id) => {
-  const [productData, setProductData] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [product, setProduct] = React.useState({});
+  const [loading, setLoading] = React.useState(true);
 
-  useEffect(() => {
+  React.useEffect(() => {
     getProductById(id)
       .then((res) => {
-        setProductData(res.data);
+        setProduct(res.data)
+        //console.log(res.data)
       })
       .catch((err) => { //Capturo el error
         console.log(err); //lo muestro por consola
@@ -18,5 +19,7 @@ export const useProductById = (id) => {
       });
   }, []);
 
-  return { productData, loading };
+  return { product, loading };
 };
+
+
