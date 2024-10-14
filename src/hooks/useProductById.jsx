@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { getProductById } from "../services/products.service"
+import React from "react";
+import { getProductById } from "../services/products.service";
 
 export const useProductById = (id) => {
   const [product, setProduct] = React.useState({});
@@ -7,12 +7,11 @@ export const useProductById = (id) => {
 
   React.useEffect(() => {
     getProductById(id)
-      .then((res) => {
-        setProduct(res.data)
-        //console.log(res.data)
+      .then((response) => {
+        setProduct(response.data);
       })
-      .catch((err) => { //Capturo el error
-        console.log(err); //lo muestro por consola
+      .catch((error) => {
+        console.error(error);
       })
       .finally(() => {
         setLoading(false);
@@ -21,5 +20,3 @@ export const useProductById = (id) => {
 
   return { product, loading };
 };
-
-

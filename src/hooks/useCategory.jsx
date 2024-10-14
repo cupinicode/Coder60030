@@ -7,8 +7,7 @@ export const useCategory = () => {
   React.useEffect(() => {
     getCategories()
       .then((response) => {
-        //console.log(response) Me fijo cómo me llega la información
-        setCategory(response.data)
+        setCategory(response.data);
       })
       .catch((error) => {
         console.log(error);
