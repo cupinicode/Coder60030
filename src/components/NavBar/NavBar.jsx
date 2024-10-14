@@ -43,7 +43,9 @@ export const NavBar = () => {
               ))}
             </MenuList>
           </Menu>
-          <Button onClick={() => createProductsFirestore('products')}>Crear productos</Button>
+          {/*Boton que dispara el script para cargar la colección de Firebase a partir de la API*/}
+          {/*<Button onClick={() => createProductsFirestore('products')}>Crear productos</Button>*/}
+          {/*Sólo lo uso UNA VEZ, después lo desactivo */}
           <Flex alignItems={"center"}>
             <Stack direction={"row"} spacing={7}>
               <CartWidget />
