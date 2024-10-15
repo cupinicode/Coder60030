@@ -1,3 +1,5 @@
+//No se usa.  Lo dejo para recordar
+
 import { getAllProducts } from "../services/products.service";
 
 import { db } from "./../firebase";

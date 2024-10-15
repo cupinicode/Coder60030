@@ -40,7 +40,7 @@ export const CartDetails = () => {
       {cartState.length === 0 ? (
         <Alert status="info" borderRadius="md">
           <AlertIcon />
-          Tu carrito está vacío.
+          El carrito está vacío.
         </Alert>
       ) : (
         <VStack spacing={4} align="stretch">

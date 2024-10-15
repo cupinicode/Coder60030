@@ -29,7 +29,7 @@ export const NavBar = () => {
       <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <Box>
-            <Link to="/">DanStore</Link>
+            <Link to="/">Home</Link>
           </Box>
           <Menu>
             <MenuButton as={Link} cursor="pointer" style={{ marginLeft: 30 }}>
@@ -44,7 +44,8 @@ export const NavBar = () => {
             </MenuList>
           </Menu>
           {/* <Button onClick={() => createProductsFirestore("products")}>
-            Crear productos
+            Boton que crea productos en Firebase, a partir de los datos del array
+            NO LO USO, LO DEJO PARA RECORDAR
           </Button> */}
           <Flex alignItems={"center"}>
             <Stack direction={"row"} spacing={7}>
@@ -76,12 +77,12 @@ export const NavBar = () => {
                   </Center>
                   <br />
                   <Center>
-                    <p>Username</p>
+                    <p>User1</p>
                   </Center>
                   <br />
                   <MenuDivider />
-                  <MenuItem>Your Servers</MenuItem>
-                  <MenuItem>Account Settings</MenuItem>
+                  <MenuItem>Mis ordenes</MenuItem>
+                  <MenuItem>Ajustes de la cuenta</MenuItem>
                   <MenuItem>Logout</MenuItem>
                 </MenuList>
               </Menu>

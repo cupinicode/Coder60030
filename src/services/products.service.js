@@ -16,3 +16,5 @@ export async function getProductsByCategory(id) {
 export async function getCategories() {
   return await axios.get("https://dummyjson.com/product/categories");
 }
+
+//No se usa.  La fuente de datos es Firebase. Solo lo dejo para recordar

@@ -1,3 +1,5 @@
+//No lo uso para el proyecto.  Lo dejo para recordar
+
 import { Button } from "@chakra-ui/react";
 import React from "react";
 import { useItemsCollection } from "../hooks";

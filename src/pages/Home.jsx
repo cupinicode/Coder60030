@@ -12,8 +12,7 @@ export const Home = () => {
     </Flex>
   ) : error ? (
     <Box>
-      Hay un error durante la carga de los productos, por favor contactese con
-      soporte.
+      Error cargando los productos
     </Box>
   ) : (
     <ItemListContainer products={items} />
