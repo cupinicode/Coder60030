@@ -5,14 +5,16 @@ export const useCategory = () => {
   const [category, setCategory] = React.useState([]);
 
   React.useEffect(() => {
-    getCategories()
-      .then((response) => {
-        setCategory(response.data);
+    const productsCollection = collection(db, "categories");
+    getDocs(productsCollection)
+      .then((snapshot) => {
+        setProducts(
+          snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+        );
       })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+      .catch(() => setError(true))
+      .finally(() => setLoading(false));
+  }, [])    
 
   return { category };
 };
