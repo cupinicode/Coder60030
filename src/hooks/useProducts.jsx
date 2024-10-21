@@ -1,14 +1,14 @@
-import React from "react";
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "../firebase";
+import React from "react"
+import { collection, getDocs } from "firebase/firestore"
+import { db } from "../firebase"
 
 export const useProducts = (categoryName) => {
-  const [products, setProducts] = React.useState([]);
-  const [loading, setLoading] = React.useState(true);
-  const [error, setError] = React.useState(false);
+  const [products, setProducts] = React.useState([])
+  const [loading, setLoading] = React.useState(true)
+  const [error, setError] = React.useState(false)
 
   React.useEffect(() => {
-    const productsCollection = collection(db, categoryName);
+    const productsCollection = collection(db, categoryName)
     getDocs(productsCollection)
       .then((snapshot) => {
         setProducts(
@@ -16,8 +16,8 @@ export const useProducts = (categoryName) => {
         );
       })
       .catch(() => setError(true))
-      .finally(() => setLoading(false));
-  }, []);
+      .finally(() => setLoading(false))
+  }, [])
 
-  return { products, loading, error };
+  return { products, loading, error }
 };

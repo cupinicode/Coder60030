@@ -12,12 +12,12 @@ import {
   Stack,
   useColorMode,
   Center,
-} from "@chakra-ui/react";
-import { MoonIcon, SunIcon } from "@chakra-ui/icons";
-import { CartWidget } from "../CartWidget";
-import { Link } from "react-router-dom";
-import { useItemsCollection } from "../../hooks";
-// import { createProductsFirestore } from "../../helpers";
+} from "@chakra-ui/react"
+import { MoonIcon, SunIcon } from "@chakra-ui/icons"
+import { CartWidget } from "../CartWidget"
+import { Link } from "react-router-dom"
+import { useItemsCollection } from "../../hooks"
+// import { createProductsFirestore } from "../../helpers"
 
 export const NavBar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -82,7 +82,7 @@ export const NavBar = () => {
                   <br />
                   <MenuDivider />
                   <MenuItem>Mis ordenes</MenuItem>
-                  <MenuItem>Ajustes de la cuenta</MenuItem>
+                  <MenuItem>Mi cuenta</MenuItem>
                   <MenuItem>Logout</MenuItem>
                 </MenuList>
               </Menu>
@@ -91,5 +91,5 @@ export const NavBar = () => {
         </Flex>
       </Box>
     </>
-  );
-};
+  )
+}

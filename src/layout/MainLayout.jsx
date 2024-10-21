@@ -1,11 +1,11 @@
-import { NavBar } from "../components";
+import { NavBar } from "../components"
 
 const MainLayout = ({ children }) => {
   return (
     <div>
       {children}
     </div>
-  );
-};
+  )
+}
 
-export default MainLayout;
+export default MainLayout

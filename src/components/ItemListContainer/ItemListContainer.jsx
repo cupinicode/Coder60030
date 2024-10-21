@@ -9,14 +9,15 @@ import {
   ButtonGroup,
   Image,
   Text,
-} from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+} from "@chakra-ui/react"
+import { Link } from "react-router-dom"
 
 export const ItemListContainer = ({ products }) => {
   // const categories = products.map((product) => product.category);
   // Set es una estructura de datos que no permite duplicados
   // const uniqueCategories = [...new Set(categories)];
   // console.log(uniqueCategories)
+
   return (
     <Box display={"flex"} flexWrap={"wrap"}>
       {products.map((product) => (
@@ -50,5 +51,5 @@ export const ItemListContainer = ({ products }) => {
         </Card>
       ))}
     </Box>
-  );
-};
+  )
+}

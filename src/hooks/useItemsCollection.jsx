@@ -1,6 +1,6 @@
-import React from "react";
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "../firebase";
+import React from "react"
+import { collection, getDocs } from "firebase/firestore"
+import { db } from "../firebase"
 
 export const useItemsCollection = (categoryName) => {
   const [items, setItems] = React.useState([]);
@@ -8,14 +8,14 @@ export const useItemsCollection = (categoryName) => {
   const [error, setError] = React.useState(false);
 
   React.useEffect(() => {
-    const itemsCollection = collection(db, categoryName);
+    const itemsCollection = collection(db, categoryName)
     getDocs(itemsCollection)
       .then((snapshot) => {
-        setItems(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+        setItems(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })))
       })
       .catch(() => setError(true))
-      .finally(() => setLoading(false));
-  }, []);
+      .finally(() => setLoading(false))
+  }, [])
 
-  return { items, loading, error };
+  return { items, loading, error }
 };

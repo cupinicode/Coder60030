@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext } from "react"
 import {
   Box,
   Container,
@@ -12,34 +12,36 @@ import {
   SimpleGrid,
   StackDivider,
   useColorModeValue,
-} from "@chakra-ui/react";
-import { CartContext } from "../../context/CartContext";
-import { SkeletonItem } from "../SkeletonItem";
-export const ItemDetailContainer = ({ product }) => {
-  const [showCount, setShowCount] = useState(false);
-  const [count, setCount] = useState(0);
+} from "@chakra-ui/react"
+import { CartContext } from "../../context/CartContext"
+import { SkeletonItem } from "../SkeletonItem"; // no lo uso
 
-  const { addItem, removeItem } = useContext(CartContext);
+export const ItemDetailContainer = ({ product }) => {
+  const [showCount, setShowCount] = useState(false)
+
+  const [count, setCount] = useState(0)
+
+  const { addItem, removeItem } = useContext(CartContext)
 
   const handleShowCount = () => {
-    setShowCount(!showCount);
-  };
+    setShowCount(!showCount)
+  }
 
   const handleIncrement = () => {
-    if (count < product.stock) {
-      const newCount = count + 1;
-      setCount(newCount);
-      addItem(product, newCount);
+    if (count < product.stock) {  // Controlo si hay stock disponible, antes de agregar 1 más
+      const newCount = count + 1
+      setCount(newCount)
+      addItem(product, newCount)
     }
-  };
+  }
 
-  const handleDecrement = () => {
-    if (count > 0) {
-      const newCount = count - 1;
-      setCount(newCount);
-      removeItem(product);
+  const handleDecrement = () => {  
+    if (count > 0) {  // Controlo que la cantidad no haya llegado a CERO, antes de disminuirla
+      const newCount = count - 1
+      setCount(newCount)
+      removeItem(product)
     }
-  };
+  }
 
   // return loading ? <SkeletonItem /> : (
   //   <Container maxW={"7xl"}>
@@ -125,6 +127,8 @@ export const ItemDetailContainer = ({ product }) => {
   //     </SimpleGrid>
   //   </Container>
   // );
+
+  
   return (
     <Container maxW={"7xl"}>
       <SimpleGrid

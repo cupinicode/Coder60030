@@ -1,18 +1,19 @@
-import { Flex, Button } from "@chakra-ui/react";
-import React, { useState, useContext } from "react";
-import { CartContext } from "../context";
-import { db } from "../firebase";
-import { collection, addDoc } from "firebase/firestore";
-export const Payment = () => {
-  const [name, setName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
+import { Flex, Button } from "@chakra-ui/react"
+import React, { useState, useContext } from "react"
+import { CartContext } from "../context"
+import { db } from "../firebase"
+import { collection, addDoc } from "firebase/firestore"
 
-  const { cartState } = useContext(CartContext);
+export const Payment = () => {
+  const [name, setName] = useState("")
+  const [lastName, setLastName] = useState("")
+  const [email, setEmail] = useState("")
+
+  const { cartState } = useContext(CartContext)
     const total = cartState.reduce(
     (acc, item) => acc + item.price * item.qtyItem,
     0
-    );
+    )
   const handleCreateOrder = () => {
     const orderObj = {
       buyer: {
@@ -26,16 +27,16 @@ export const Payment = () => {
           title: item.title,
           price: item.price,
           quantity: item.qtyItem,
-        };
+        }
       }),
       total: total,
-    };
+    }
 
-    const ordersCollection = collection(db, "orders");
+    const ordersCollection = collection(db, "orders")
     addDoc(ordersCollection, orderObj).then(({ id }) => {
-      alert("Se creó la orden con id: " + id);
-    });
-  };
+      alert("Se creó la orden con el id: " + id)
+    })
+  }
 
   return (
     <Flex>
@@ -59,5 +60,5 @@ export const Payment = () => {
         Crear Orden
       </Button>
     </Flex>
-  );
-};
+  )
+}
